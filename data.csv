@@ -1,0 +1,78 @@
+ID,Name,Age,Season,Location,DayLeft,ReasonForLeaving,Placing ,Origin,Gender,Background,Cens
+1,Alan Kay,40,1,Vancouver-Is,56,Winner,1,Georgia,Male,,0
+2,Sam Larson,22,1,Vancouver-Is,55,Medical-Starvation,2,Nebraska,Male,,1
+3,Mitch Mitchell,34,1,Vancouver-Is,43,Didn’t want to do it anymore,3,Massachusetts,Male,,1
+4,Lucas Miller,32,1,Vancouver-Is,39,Didn’t want to do it anymore,4,Iowa,Male,,1
+5,Distin Feher,37,1,Vancouver-Is,8,Didn’t want to do it anymore,5,Pennsylvania,Male,,1
+6,Brant McGee,44,1,Vancouver-Is,6,Medical-Accident,6,Nth Carolina,Male,,1
+7,Wayne Russell,46,1,Vancouver-Is,4,Didn’t want to do it anymore,7,New Brunswick,Male,,1
+8,Joe Robinet,24,1,Vancouver-Is,4,Lost Ferro Rod,8,Ontario,Male,,1
+9,Chris Weatherman,41,1,Vancouver-Is,2,Didn’t want to do it anymore,9,Florida,Male,,1
+10,Josh Chaves,31,1,Vancouver-Is,1,Didn’t want to do it anymore,10,Ohio,Male,,1
+11,David McIntryre,50,2,Vancouver-Is,66,Winner,1,Michigan,Male,,0
+12,Larry Roberts,44,2,Vancouver-Is,64,Medical-Starvation,2,Minnesota,Male,,1
+13,Jose Martinez Amoedo,45,2,Vancouver-Is,59,Didn’t want to do it anymore,3,Spain,Male,,1
+14,Nicole Apelian,45,2,Vancouver-Is,57,Didn’t want to do it anymore,4,Oregon,Female,,1
+15,Justin Vititoe,35,2,Vancouver-Is,35,Didn’t want to do it anymore,5,Georgia,Male,,1
+16,Randy Champagne,28,2,Vancouver-Is,21,Didn’t want to do it anymore,6,Utah,Male,,1
+17,Mike Lowe,55,2,Vancouver-Is,21,Didn’t want to do it anymore,7,Colorado,Male,,1
+18,Tracy Wilnon,44,2,Vancouver-Is,8,Didn’t want to do it anymore,8,South Caroline,Female,,1
+19,Mary Kate Green,36,2,Vancouver-Is,7,Medical-Accident,9,Alaska,Female,,1
+20,Desmond White,37,2,Vancouver-Is,1,Didn’t want to do it anymore,10,Arizona,Male,,1
+21,Zachary Fowler,36,3,Patagonia,87,Winner,1,Maine,Male,,0
+22,Carleigh Fairchild,28,3,Patagonia,86,Medical-Starvation,2,Alaska,Female,,1
+23,Megan Hanacek,41,3,Patagonia,78,Medical-Accident,3,British Columbia,Female,,1
+24,Dave Nessia,49,3,Patagonia,73,Medical-Starvation,4,Utah,Male,,1
+25,Callie North,27,3,Patagonia,72,Didn’t want to do it anymore,5,Washington,Female,,1
+26,Greg Ovens,53,3,Patagonia,51,Starvation,6,British Columbia,Male,,1
+27,Dan Wowak,34,3,Patagonia,51,Didn’t want to do it anymore,7,Pennsylvania,Male,,1
+28,Britt Ahart,40,3,Patagonia,35,Didn’t want to do it anymore,8,Ohio,Male,,1
+29,Zachary Gault,22,3,Patagonia,8,Medical-Accident,9,Ontario,Male,,1
+30,Jim Shields,37,3,Patagonia,3,Didn’t want to do it anymore,10,Pennsylvania,Male,,1
+31,Baird,35,4,Vancouver-Is,75,Winner,1,Ontario,Male,,0
+32,Brockdorff,61,4,Vancouver-Is,74,Didn’t want to do it anymore,2,Maryland,Male,,1
+33,Whipple,45,4,Vancouver-Is,49,Medical-Starvation,3,Alaska,Female,,1
+34,Wikes,44,4,Vancouver-Is,14,Didn’t want to do it anymore,4,Mississippi,Male,,1
+35,Bosdell,44,4,Vancouver-Is,5,Medical-Accident,5,Alaska,Male,,1
+36,Ribar,48,4,Vancouver-Is,2,Didn’t want to do it anymore,6,Maine,Male,,1
+37,Richardson,23,4,Vancouver-Is,1,Medical-Accident,7,Illinois,Male,,1
+38,Sam Larson AS,41,5,Mongolia,60,Winner,1,Nebraska,Male,,0
+39,Britt Ahart AS,46,5,Mongolia,56,Didn’t want to do it anymore,2,Ohio,Male,,1
+40,Larry Roberts AS,50,5,Mongolia,41,Didn’t want to do it anymore,3,Minnesota,Male,,1
+41,Dave Nessia AS,31,5,Mongolia,36,Didn’t want to do it anymore,4,Utah,Male,,1
+42,Randy Champagne AS,45,5,Mongolia,35,Didn’t want to do it anymore,5,Utah,Male,,1
+43,Brooke Whipple AS,45,5,Mongolia,28,Didn’t want to do it anymore,6,Alaska,Female,,1
+44,Jesse Bosdell AS,32,5,Mongolia,24,Medical-Bowel,7,Maine,Male,,1
+45,Nicole Apelian AS,47,5,Mongolia,9,Medical-Accident,8,Washington,Female,,1
+46,Brad Richardson AS,24,5,Mongolia,7,Medical-Starvation,9,Illinois,Male,,1
+47,Carleigh Fairchild AS,30,5,Mongolia,5,Medical-Accident,10,Alaska,Female,,1
+48,Jordan Jonas,35,6,Slave-Lk,77,Winner,1,Virginia,Male,,0
+49,Woniya Thibeault,42,6,Slave-Lk,73,Medical-Starvation,2,California,Female,,1
+50,Nathan Donnely,39,6,Slave-Lk,72,Shelter Fire,3,Washington,Male,,1
+51,Barry Karcher,39,6,Slave-Lk,69,Medical-Starvation,4,Colorado,Male,,1
+52,Nikki van Schyndel,44,6,Slave-Lk,52,Medical-Starvation,5,British Columbia,Female,,1
+53,Michelle Wohlberg,31,6,Slave-Lk,48,Medical-Bowel,6,Saskatchewan,Female,,1
+54,Brady Nichols,36,6,Slave-Lk,32,Didn’t want to do it anymore,7,Texas,Male,,1
+55,Ray Livingston,43,6,Slave-Lk,19,Didn’t want to do it anymore,8,Washington,Male,,1
+56,Donny Dust,38,6,Slave-Lk,8,Medical-Accident,9,Colorado,Male,,1
+57,Tim Backus,55,6,Slave-Lk,4,Medical-Accident,10,Texas,Male,,1
+58,Roland Welker,47,7,Slave-Lk,100,Winner,1,Alaska,Male,,0
+59,Callie Russell,31,7,Slave-Lk,89,Medical-Starvation,2,Montana,Female,,1
+60,Kielyn Marone,33,7,Slave-Lk,80,Medical-Starvation,3,Ontario,Female,,1
+61,Amos Rodriguez,40,7,Slave-Lk,58,Medical-Starvation,4,Indiana,Male,,1
+62,Mark D’Ambrosio,33,7,Slave-Lk,44,Medical-Accident,5,Washington,Male,,1
+63,Joe Nicholas,31,7,Slave-Lk,44,Medical-Starvation,6,California,Male,,1
+64,Joel Van Der Loon,34,7,Slave-Lk,40,Medical-Starvation,7,Oregon,Male,,1
+65,Keith Syers,45,7,Slave-Lk,22,Medical-Accident,8,Kentucky,Male,,1
+66,Correy Hawk,30,7,Slave-Lk,12,Medical-Accident,9,Nebraska,Male,,1
+67,Shawn Helton,43,7,Slave-Lk,10,Lost Ferro Rod,10,Tennessee,Male,,1
+68,Clay Hayes ,40,8,Chilko-Lk,74,Winner,1,Idaho,Male,,0
+69,Biko Wright,29,8,Chilko-Lk,73,Medical-Starvation,2,Oregon,Male,,1
+70,Theresa Emmerich Kamper,40,8,Chilko-Lk,69,Medical-Starvation,3,England,Female,,1
+71,Colter Barnes,36,8,Chilko-Lk,67,Medical-Starvation,4,Alaska,Male,,1
+72,Rose Anna More,43,8,Chilko-Lk,37,Medical-Starvation,5,Pennsylvania,Female,,1
+73,Nate Webber,47,8,Chilko-Lk,24,Medical-Accident,6,Michigan,Male,,1
+74,Matt Corradino,42,8,Chilko-Lk,22,Didn’t want to do it anymore,7,St Croix,Male,,1
+75,Michelle Finn,46,8,Chilko-Lk,21,Medical-Starvation,8,Maine,Female,,1
+76,Jordon Bell,43,8,Chilko-Lk,19,Didn’t want to do it anymore,9,Tennessee,Male,,1
+77,Tim Madsen,48,8,Chilko-Lk,6,Medical-Accident,10,Wyoming,Male,,1

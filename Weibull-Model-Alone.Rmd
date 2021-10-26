@@ -1,0 +1,197 @@
+---
+output: 
+  html_document:
+    toc: true
+    toc_float: 
+      collapsed: false
+  number_sections: true
+ 
+title: ""
+author: "[User-764Q](https://github.com/User-764Q)"
+date: "`r paste0('Last Run: ', format(Sys.time(), '%A %d-%B-%Y'))`"
+params: 
+  param1: "Don't Forget about params"
+
+---
+
+<style>
+
+#TOC {
+ font-family: Calibri; 
+ font-size: 16px;
+ border-color: #3D68DF;
+ background: #3D68DF;
+}
+
+body {
+  font-family: Garamond;
+  font-size: 16px; 
+  border-color: #D0D0D0;
+  background-color: #D0D0D0;
+  color: #1A1A1A;
+}
+
+pre {
+  color: #1A1A1A
+  background: #D0D0D0;
+  background-color: #D0D0D0
+  font-family: Calibri; 
+  
+}
+
+</style>
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+knitr::opts_chunk$set(collapse = TRUE)
+
+knitr::opts_chunk$set(warning = TRUE)
+
+knitr::opts_chunk$set(message = TRUE)
+
+knitr::opts_chunk$set(include = TRUE)
+
+custom_black <- '1A1A1A'
+custom_white <- 'C0C0C0'
+custom_grey_dark <- '6F6F6F'
+custom_grey_light <- 'B2B2B2'
+custom_accent_blue <- '3D6BFF'
+
+```
+
+# Weibull Model 
+
+## Introduction
+
+Previously I have done some [unsophisticated analysis](https://rpubs.com/User764Q/820529) of the Alone TV show
+But after doing the Datacamp [Sulvival Analysis in R]() course. I wanted to do something 
+more sphisticated and formal. The key take away from the course was that the previous
+analysis I did will under estimate the contestants survival as it is not known how long
+the winners would have stayed on location if they didn't win. Survival analysis can account
+for this and correct for the underestimation. 
+
+Notes on how I created the data set are on my [previous post](https://rpubs.com/User764Q/820529)
+
+For this post I want to;  
+
+* compare the 'censored' vs 'uncensored' model I did previously (where 50% of 
+contestants were gone after 40 days). 
+* compare the two locations that have had wore than one season (Slave Lake and Vancouver Island), to see if they have significantly different survival 10th percentile, median and final percentile. 
+
+
+## Loading Lbiraries and data     
+
+```{r }
+
+library(tidyverse)
+library(survminer)
+library(survival)
+
+data <- read_csv("data.csv")
+
+```
+
+## Un-Censored Model
+
+This analysis doesn't adjust for the fact that we don't know when the winners 
+would have left. 
+
+```{r}
+
+wb <- survreg(Surv(DayLeft) ~ 1, data = data)
+
+ten_pct_survival <- predict(wb, type = 'quantile', p = .1,
+                                newdata = data.frame(1))
+
+# median of patients survive beyond time point...
+med_survival <- predict(wb, type = 'quantile', p = .5,
+                                newdata = data.frame(1))
+
+ninety_pct_survival <- predict(wb, type = 'quantile', p = .9, 
+                               newdata  = data.frame(1))
+
+```
+
+Using the un-censored mode and considering all 8 seasons of Alone so far, it is 
+expected 90% of consestants last **`r ten_pct_survival %>% round(0)`** days, 
+half contestants last **`r med_survival %>% round(0)`** and 10% will last 
+**`r ninety_pct_survival %>% round(0)`** days. 
+
+## Censored Model
+
+This analysis adjusts for the fact that we don't know when the winners 
+would have left. 
+
+```{r}
+
+wb_cen <- survreg(Surv(DayLeft, Cens) ~ 1, data = data)
+
+# 70 Percent of patients survive beyond time point...
+
+ten_pct_survival_cen <- predict(wb_cen, type = 'quantile', p = .1,
+                                newdata = data.frame(1))
+
+# median of patients survive beyond time point...
+med_survival_cen <- predict(wb_cen, type = 'quantile', p = .5,
+                                newdata = data.frame(1))
+
+ninety_pct_survival_cen<- predict(wb_cen, type = 'quantile', p = .9, 
+                               newdata  = data.frame(1))
+
+```
+
+Using the un-censored mode and considering all 8 seasons of Alone so far, it is 
+expected 90% of contestants last **`r ten_pct_survival_cen %>% round(0)`** days, 
+half contestants last **`r med_survival_cen %>% round(0)`** and 10% will last 
+**`r ninety_pct_survival_cen %>% round(0)`** days. 
+
+## Comparing Locations
+
+
+
+```{r}
+
+data_bl <- data %>% 
+  filter(Location %in% c('Vancouver-Is', 'Slave-Lk')) %>%
+  mutate(Location = factor(Location))
+
+wb_bl <- survreg(Surv(DayLeft, Cens) ~ Location, data = data_bl)
+
+ninety_pct_survival_vi <- predict(wb_bl, type = 'quantile', 
+                           p = .9, newdata = data.frame(Location = 'Vancouver-Is'))
+
+med_survival_vi <- predict(wb_bl, type = 'quantile', 
+                           p = .5, newdata = data.frame(Location = 'Vancouver-Is'))
+
+ten_pct_survival_vi <- predict(wb_bl, type = 'quantile', 
+                           p = .1, newdata = data.frame(Location = 'Vancouver-Is'))
+
+wb_bl <- survreg(Surv(DayLeft, Cens) ~ Location, data = data_bl)
+
+ninety_pct_survival_sl <- predict(wb_bl, type = 'quantile', 
+                           p = .9, newdata = data.frame(Location = 'Slave-Lk'))
+
+med_survival_sl <- predict(wb_bl, type = 'quantile', 
+                           p = .5, newdata = data.frame(Location = 'Slave-Lk'))
+
+ten_pct_survival_sl <- predict(wb_bl, type = 'quantile', 
+                           p = .1, newdata = data.frame(Location = 'Slave-Lk'))
+
+```
+
+# Cox Model
+
+The previous modelling assumes proportionate hazards. The Cox model also requires.The crossing survival curves I calculated earlier for the by location data means this may be an issue [Previous post](https://rpubs.com/User764Q/820529).
+
+```{r}
+
+cx_bl <- coxph(Surv(DayLeft, Cens) ~ Location, 
+               data = data_bl)
+
+
+
+
+
+```
